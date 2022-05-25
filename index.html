@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Lightify</title>
+    <link
+      rel="shortcut icon"
+      href="https://open.scdn.co/cdn/images/favicon32.8e66b099.png"
+      type="image/png"
+    />
+    <script src="scripts/logger.js"></script>
+    <script src="scripts/spotify.js"></script>
+    <script defer src="scripts/WebPlaybackSDK/spotify-player.js"></script>
+    <style>
+      #container {
+        display: flex;
+      }
+    </style>
+  </head>
+  <body>
+    <div style="display: flex">
+      <img
+        src="https://i.scdn.co/image/ab67616d00004851ec81caa3da9d6a413f550d01"
+        width="200"
+        height="200"
+        style="margin-right: 15px; border-radius: 5px"
+      />
+      <div>
+        <h1 id="track"></h1>
+        <h2 id="artist"></h2>
+        <button onclick="_Spotify.player.togglePlay()" name="toggle">
+          Toggle play
+        </button>
+        <label for="toggle">Current state: unknown</label>
+        <br />
+        <br />
+        <button onclick="_Spotify.player.previousTrack()">Previous</button>
+        <button onclick="_Spotify.player.nextTrack()">Next</button>
+      </div>
+    </div>
+    <progress
+      id="track-progress"
+      max="100"
+      style="width: 450px"
+      value="0"
+    ></progress>
+  </body>
+</html>
